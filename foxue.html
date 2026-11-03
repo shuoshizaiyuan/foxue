@@ -120,6 +120,53 @@ ol.yi-list li .back,ol.py-list li .back{float:right;font-size:12px;color:#b6aa91
 </style>
 </head>
 <body>
+<style id="__wbp_guard_style">
+#__wbp_guard{position:fixed;left:50%;top:18px;transform:translateX(-50%);z-index:99999;
+ background:rgba(28,26,22,.92);color:#f2eee4;font:13px/1.7 "Noto Serif SC",serif;
+ padding:9px 22px;border-radius:22px;letter-spacing:2px;box-shadow:0 6px 20px rgba(0,0,0,.22);
+ pointer-events:none;opacity:0;transition:opacity .45s;}
+#__wbp_guard.on{opacity:1;}
+#__wbp_guard b{font-weight:400;color:#d8c89a;letter-spacing:3px;}
+</style>
+<div id="__wbp_guard">正在载入原文 <b>请稍候</b></div>
+<script id="__wbp_guard_js">
+(function(){
+  var pending = null, timer = null, gone = false;
+  var g = document.getElementById('__wbp_guard');
+  /* 只在确实慢的时候才亮提示，避免快页面闪一下 */
+  function showTip(){
+    if(gone || !g) return;
+    if(document.readyState !== 'loading') return;
+    g.classList.add('on');
+  }
+  timer = setTimeout(showTip, 700);
+
+  /* 捕获阶段先于元素上的 onclick 执行：解析未完成时拦下点击，避免抛错丢点击 */
+  document.addEventListener('click', function(e){
+    if(document.readyState !== 'loading') return;
+    var el = e.target;
+    while(el && el !== document && !(el.getAttribute && el.getAttribute('onclick'))) el = el.parentNode;
+    if(!el || el === document) return;
+    e.preventDefault(); e.stopPropagation();
+    pending = el;
+    if(g){ g.classList.add('on'); g.innerHTML = '正在载入原文 <b>点击已记录</b>'; }
+  }, true);
+
+  function done(){
+    if(gone) return;
+    gone = true;
+    clearTimeout(timer);
+    if(g){ g.classList.remove('on'); setTimeout(function(){ if(g.parentNode) g.parentNode.removeChild(g); }, 500); }
+    if(pending){ var el = pending; pending = null; try{ el.click(); }catch(err){} }
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){ setTimeout(done, 80); }, {once:true});
+  } else { done(); }
+  /* 兜底：万一卡住，20 秒后收起提示，不让它永久挡着 */
+  setTimeout(function(){ if(!gone && g){ g.classList.remove('on'); } }, 20000);
+})();
+</script>
+
 <div id="coverPage" class="view on">
   <div class="cv-kicker">闻 思 修 · 依 圣 言 量</div>
   <h1>佛学知识台</h1>
