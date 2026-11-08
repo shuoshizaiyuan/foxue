@@ -10,15 +10,7 @@
 body{font-family:"Noto Serif SC","Source Han Serif SC","STZhongsong",serif;background:var(--bg);color:var(--ink);line-height:1.9;}
 .view{display:none;}
 .view.on{display:block;}
-#coverPage:not(.on){display:none;}
 /* cover */
-#coverPage{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(160deg,#1d3448 0%,#2b4a6f 55%,#3a5f83 100%);color:#f5efe0;text-align:center;padding:40px;}
-#coverPage .cv-kicker{letter-spacing:8px;font-size:14px;opacity:.75;margin-bottom:26px;}
-#coverPage h1{font-size:44px;letter-spacing:14px;font-weight:500;margin-bottom:18px;}
-#coverPage .cv-sub{font-size:15px;opacity:.85;letter-spacing:3px;margin-bottom:44px;}
-#coverPage .cv-enter{display:inline-block;padding:12px 46px;border:1px solid rgba(245,239,224,.55);border-radius:28px;color:#f5efe0;text-decoration:none;letter-spacing:6px;font-size:15px;cursor:pointer;transition:.25s;}
-#coverPage .cv-enter:hover{background:rgba(245,239,224,.12);}
-#coverPage .cv-foot{position:absolute;bottom:26px;font-size:12px;opacity:.55;letter-spacing:2px;}
 /* home */
 .wrap{max-width:1060px;margin:0 auto;padding:34px 22px 60px;}
 .site-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;}
@@ -112,7 +104,6 @@ ol.yi-list li .back,ol.py-list li .back{float:right;font-size:12px;color:#b6aa91
  .reader-top,.noprint,.btn2{display:none!important;}
  body{background:#fff;}
  .view{display:block!important;}
- #coverPage{min-height:60vh;page-break-after:always;}
  #homePage,#bookPage{display:none!important;}
  .piece{display:block!important;page-break-before:always;border:none;max-width:100%;}
  .duo-view{display:none!important;}
@@ -198,17 +189,9 @@ ol.yi-list li .ln,ol.py-list li .ln{display:none;}
 })();
 </script>
 
-<div id="coverPage" class="view on">
-  <div class="cv-kicker">闻 思 修 · 依 圣 言 量</div>
-  <h1>佛学知识台</h1>
-  <div class="cv-sub">经论阅读 · 批注 · 译述 · 义理阐释</div>
-  <a class="cv-enter" onclick="showView('homePage')">进 入</a>
-  <div class="cv-foot">底本：CBETA 大正藏 · 站内内容仅供学习参考</div>
-</div>
-
-<div id="homePage" class="view">
+<div id="homePage" class="view on">
   <div class="wrap">
-    <div class="site-top"><span class="brand">佛学知识台</span><span><a href="index.html">← 哲学知识台</a>　<a onclick="showView('coverPage')">封面</a></span></div>
+    <div class="site-top"><span class="brand">佛学知识台</span><span><a href="index.html">← 哲学知识台</a></span></div>
     <div class="home-h">经 文</div>
     <a class="cat-card" onclick="showView('bookPage')">
       <div class="cc-k">经 · 第一部</div>
